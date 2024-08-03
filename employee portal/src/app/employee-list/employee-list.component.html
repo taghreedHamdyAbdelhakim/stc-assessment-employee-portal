@@ -1,0 +1,75 @@
+<br>
+<br>
+<div class="container">
+
+   
+<table style="margin-bottom: 50px;" class=" table table-responsive table-striped  border-dark">
+
+    <thead class="table-dark ">
+        <tr>
+            <th scope="col" (click)="onSortChange('id')">Id
+                <span *ngIf="sort === 'id'" class="sort-icon">
+                    <i class="fa" [ngClass]="{'fa-sort-alpha-up': sortOrder === 'asc', 'fa-sort-alpha-down': sortOrder === 'desc'}"></i>
+                </span>
+            </th>
+            <th scope="col" (click)="onSortChange('firstName')">FName
+
+                <span *ngIf="sort === 'firstName'" class="sort-icon">
+                    <i class="fa" [ngClass]="{'fa-sort-alpha-up': sortOrder === 'asc', 'fa-sort-alpha-down': sortOrder === 'desc'}"></i>
+                </span>
+
+            </th>
+            <th scope="col" (click)="onSortChange('lastName')">LName
+
+                <span *ngIf="sort === 'lastName'" class="sort-icon">
+                    <i class="fa" [ngClass]="{'fa-sort-alpha-up': sortOrder === 'asc', 'fa-sort-alpha-down': sortOrder === 'desc'}"></i>
+                </span>
+            </th>
+            <th scope="col" (click)="onSortChange('email')">Email
+                <span *ngIf="sort === 'email'" class="sort-icon">
+                    <i class="fa" [ngClass]="{'fa-sort-alpha-up': sortOrder === 'asc', 'fa-sort-alpha-down': sortOrder === 'desc'}"></i>
+                </span>
+            </th>
+            <th scope="col" (click)="onSortChange('phone')">Phone</th>
+            <th scope="col" (click)="onSortChange('salary')">Salary
+                <span *ngIf="sort === 'salary'" class="sort-icon">
+                    <i class="fa" [ngClass]="{'fa-sort-alpha-up': sortOrder === 'asc', 'fa-sort-alpha-down': sortOrder === 'desc'}"></i>
+                </span>
+            </th>
+            <th>Actions</th>
+        </tr>
+
+    </thead> 
+
+
+    <tbody>
+        <tr *ngFor = "let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.salary}}</td>
+           
+        
+            <td>
+                <button (click) = "updateEmployee(employee.id)" class = "btn  btn-secondary btn-sm"> Update</button>
+                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+
+    <div style=" display: flex;          justify-content: center;    
+    align-items: center;     ">
+
+    <ngb-pagination [collectionSize]="employeeCount"  [pageSize]="5" [(page)]="page" [rotate]="true"
+    (pageChange)="onPageChange(page)" aria-label="Pagination">
+    
+</ngb-pagination>
+  </div>
+<br><br><br><br>
+</div>
+

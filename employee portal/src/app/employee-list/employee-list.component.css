@@ -1,0 +1,49 @@
+.btn{
+    margin-right: 20px;
+    box-shadow: 10 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.inline{
+    display: flex;
+}
+
+
+.inline .btn{
+    margin-left: 1rem;
+}
+
+input{
+    border: 1px solid #000000;
+    box-shadow: 10 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Custom styles for NgbPagination */
+.ngb-pagination {
+    display: inline-block;
+    margin: 10px; /* Adjust margin as needed */
+  }
+  
+  /* Style for page numbers */
+  .ngb-pagination a.page-link {
+    color: rgb(12, 11, 11); /* Set text color */
+    background-color: black; /* Set background color */
+    border: 1px solid black; /* Set border color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    margin: 0 3px; /* Adjust margin as needed */
+    transition: background-color 0.3s ease;  --bs-pagination-active-border-color: #f44336; /* Smooth transition for background color change */
+  }
+  
+  /* Hover effect for page numbers */
+  .ngb-pagination a.page-link:hover {
+    background-color: rgb(44, 31, 31); /* Change background color on hover */
+    color: rgb(230, 225, 225); /* Change text color on hover */
+  }
+  :host {
+  .pagination {
+    --bs-pagination-active-border-color: #dc3545;
+    --bs-pagination-active-bg: #dc3545;
+    --bs-pagination-focus-color: #dc3545;
+    --bs-pagination-color:  black;
+    --bs-pagination-hover-color: #dc3545;
+  }
+  }
